@@ -67,5 +67,10 @@ namespace MonoGame.Extended
 
             return rectangle;
         }
+
+        public static Point GetSize(this Rectangle rectangle)
+        {
+            return new Point(rectangle.Width,rectangle.Height);
+        }
     }
 }

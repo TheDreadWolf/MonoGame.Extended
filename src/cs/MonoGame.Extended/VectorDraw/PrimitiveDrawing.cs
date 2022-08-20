@@ -12,10 +12,10 @@ namespace MonoGame.Extended.VectorDraw
         //Drawing
         private PrimitiveBatch _primitiveBatch;
 
-        private SpriteBatch _batch;
+        /*private SpriteBatch _batch;
         private SpriteFont _font;
         private GraphicsDevice _device;
-        private readonly Vector2[] _tempVertices = new Vector2[1000]; //TODO: something else...
+        private readonly Vector2[] _tempVertices = new Vector2[1000]; //TODO: something else...*/
 
         //private Matrix _localProjection;
         //private Matrix _localView;

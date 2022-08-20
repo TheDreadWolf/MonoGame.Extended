@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using MonoGame.Extended.Sprites;
 
 namespace MonoGame.Extended.Screens.Transitions
 {
@@ -34,7 +35,7 @@ namespace MonoGame.Extended.Screens.Transitions
             var height = _graphicsDevice.Viewport.Height * Value;
             var rectangle = new RectangleF(x, y, width, height);
 
-            _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
+            _spriteBatch.BeginEXT(samplerState: SamplerState.PointClamp);
             _spriteBatch.FillRectangle(rectangle, Color);
             _spriteBatch.End();
         }

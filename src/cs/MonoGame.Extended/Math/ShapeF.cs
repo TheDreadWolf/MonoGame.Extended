@@ -1,4 +1,6 @@
-﻿namespace MonoGame.Extended
+﻿using Microsoft.Xna.Framework;
+
+namespace MonoGame.Extended
 {
     /// <summary>
     ///     Base class for shapes.
@@ -11,7 +13,7 @@
         /// <summary>
         /// Gets or sets the position of the shape.
         /// </summary>
-        Point2 Position { get; set; }
+        Vector2 Position { get; set; }
     }
 
     /// <summary>

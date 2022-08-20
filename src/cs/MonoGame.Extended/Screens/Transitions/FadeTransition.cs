@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using MonoGame.Extended.Sprites;
 
 namespace MonoGame.Extended.Screens.Transitions
 {
@@ -26,7 +27,7 @@ namespace MonoGame.Extended.Screens.Transitions
 
         public override void Draw(GameTime gameTime)
         {
-            _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
+            _spriteBatch.BeginEXT(samplerState: SamplerState.PointClamp);
             _spriteBatch.FillRectangle(0, 0, _graphicsDevice.Viewport.Width, _graphicsDevice.Viewport.Height, Color * Value);
             _spriteBatch.End();
         }

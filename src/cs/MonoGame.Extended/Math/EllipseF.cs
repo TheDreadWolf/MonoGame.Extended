@@ -11,7 +11,7 @@ namespace MonoGame.Extended
         [DataMember] public float RadiusX { get; set; }
         [DataMember] public float RadiusY { get; set; }
 
-        public Point2 Position
+        public Vector2 Position
         {
             get => Center;
             set => Center = value;

@@ -281,6 +281,16 @@ namespace MonoGame.Extended
             }
         }
 
+        public void Rotate(float radians)
+        {
+            Rotation += radians;
+        }
+
+        public void RotateDegrees(float degrees)
+        {
+            float radians = FloatHelper.Radians(degrees);
+            Rotate(radians);  
+        }
         /// <summary>
         ///     Gets or sets the local scale.
         /// </summary>

@@ -1,28 +1,28 @@
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace MonoGame.Extended.TextureAtlases
 {
     public class TexturePackerMeta
     {
-        [JsonProperty("app")]
+        [JsonPropertyName("app")]
         public string App { get; set; }
 
-        [JsonProperty("version")]
+        [JsonPropertyName("version")]
         public string Version { get; set; }
 
-        [JsonProperty("image")]
+        [JsonPropertyName("image")]
         public string Image { get; set; }
 
-        [JsonProperty("format")]
+        [JsonPropertyName("format")]
         public string Format { get; set; }
 
-        [JsonProperty("size")]
+        [JsonPropertyName("size")]
         public TexturePackerSize Size { get; set; }
 
-        [JsonProperty("scale")]
+        [JsonPropertyName("scale"),JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
         public float Scale { get; set; }
 
-        [JsonProperty("smartupdate")]
+        [JsonPropertyName("smartupdate")]
         public string SmartUpdate { get; set; }
 
         public override string ToString()

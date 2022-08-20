@@ -73,10 +73,10 @@ namespace MonoGame.Extended
             DrawPolygonEdge(spriteBatch, texture, points[points.Count - 1] + offset, points[0] + offset, color, thickness, layerDepth);
         }
 
-        private static void DrawPolygonEdge(SpriteBatch spriteBatch, Texture2D texture, Vector2 point1, Vector2 point2, Color color, float thickness, float layerDepth)
+        private static void DrawPolygonEdge(SpriteBatch spriteBatch, Texture2D texture, Vector2 point1, Vector2 Vector2, Color color, float thickness, float layerDepth)
         {
-            var length = Vector2.Distance(point1, point2);
-            var angle = (float)Math.Atan2(point2.Y - point1.Y, point2.X - point1.X);
+            var length = Vector2.Distance(point1, Vector2);
+            var angle = (float)Math.Atan2(Vector2.Y - point1.Y, Vector2.X - point1.X);
             var scale = new Vector2(length, thickness);
             spriteBatch.Draw(texture, point1, null, color, angle, Vector2.Zero, scale, SpriteEffects.None, layerDepth);
         }
@@ -168,7 +168,7 @@ namespace MonoGame.Extended
         }
 
         /// <summary>
-        /// Draws a line from point1 to point2 with an offset
+        /// Draws a line from point1 to Vector2 with an offset
         /// </summary>
         /// <param name="spriteBatch">The destination drawing surface</param>
         /// <param name="x1">The X coord of the first point</param>
@@ -184,27 +184,27 @@ namespace MonoGame.Extended
         }
 
         /// <summary>
-        /// Draws a line from point1 to point2 with an offset
+        /// Draws a line from point1 to Vector2 with an offset
         /// </summary>
         /// <param name="spriteBatch">The destination drawing surface</param>
         /// <param name="point1">The first point</param>
-        /// <param name="point2">The second point</param>
+        /// <param name="Vector2">The second point</param>
         /// <param name="color">The color to use</param>
         /// <param name="thickness">The thickness of the line</param>
         /// <param name="layerDepth">The depth of the layer of this shape</param>
-        public static void DrawLine(this SpriteBatch spriteBatch, Vector2 point1, Vector2 point2, Color color, float thickness = 1f, float layerDepth = 0)
+        public static void DrawLine(this SpriteBatch spriteBatch, Vector2 point1, Vector2 Vector2, Color color, float thickness = 1f, float layerDepth = 0)
         {
             // calculate the distance between the two vectors
-            var distance = Vector2.Distance(point1, point2);
+            var distance = Vector2.Distance(point1, Vector2);
 
             // calculate the angle between the two vectors
-            var angle = (float)Math.Atan2(point2.Y - point1.Y, point2.X - point1.X);
+            var angle = (float)Math.Atan2(Vector2.Y - point1.Y, Vector2.X - point1.X);
 
             DrawLine(spriteBatch, point1, distance, angle, color, thickness, layerDepth);
         }
 
         /// <summary>
-        /// Draws a line from point1 to point2 with an offset
+        /// Draws a line from point1 to Vector2 with an offset
         /// </summary>
         /// <param name="spriteBatch">The destination drawing surface</param>
         /// <param name="point">The starting point</param>

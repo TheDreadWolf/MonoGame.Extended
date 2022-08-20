@@ -226,30 +226,6 @@ namespace MonoGame.Extended
         }
 
         /// <summary>
-        ///     Performs an implicit conversion from a <see cref="Point3" /> to a <see cref="Size3" />.
-        /// </summary>
-        /// <param name="point">The point.</param>
-        /// <returns>
-        ///     The resulting <see cref="Size3" />.
-        /// </returns>
-        public static implicit operator Size3(Point3 point)
-        {
-            return new Size3(point.X, point.Y, point.Z);
-        }
-
-        /// <summary>
-        ///     Performs an implicit conversion from a <see cref="Point3" /> to a <see cref="Size3" />.
-        /// </summary>
-        /// <param name="size">The size.</param>
-        /// <returns>
-        ///     The resulting <see cref="Point3" />.
-        /// </returns>
-        public static implicit operator Point3(Size3 size)
-        {
-            return new Point3(size.Width, size.Height, size.Depth);
-        }
-
-        /// <summary>
         ///     Performs an implicit conversion from a <see cref="Size3" /> to a <see cref="Vector3" />.
         /// </summary>
         /// <param name="size">The size.</param>

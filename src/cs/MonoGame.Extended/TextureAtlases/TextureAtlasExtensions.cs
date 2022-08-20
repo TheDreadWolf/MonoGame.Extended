@@ -5,6 +5,11 @@ namespace MonoGame.Extended.TextureAtlases
 {
     public static class TextureAtlasExtensions
     {
+        public static void Draw(this SpriteBatch spriteBatch, TextureRegion2D textureRegion, Vector2 position)
+        {
+            Draw(spriteBatch, textureRegion, position, Color.White);
+        }
+
         public static void Draw(this SpriteBatch spriteBatch, TextureRegion2D textureRegion, Vector2 position, Color color, Rectangle? clippingRectangle = null)
         {
             Draw(spriteBatch, textureRegion, position, color, 0, Vector2.Zero, Vector2.One, SpriteEffects.None, 0, clippingRectangle);

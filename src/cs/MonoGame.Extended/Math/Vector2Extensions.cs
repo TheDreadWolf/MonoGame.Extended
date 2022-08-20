@@ -7,16 +7,16 @@ namespace MonoGame.Extended
     public static class Vector2Extensions
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector2 SetX(this Vector2 vector2, float x) => new Vector2(x, vector2.Y);
+        public static Vector2 SetX(this Vector2 vector2, float x) => new (x, vector2.Y);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector2 SetY(this Vector2 vector2, float y) => new Vector2(vector2.X, y);
+        public static Vector2 SetY(this Vector2 vector2, float y) => new (vector2.X, y);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector2 Translate(this Vector2 vector2, float x, float y) => new Vector2(vector2.X + x, vector2.Y + y);
+        public static Vector2 Translate(this Vector2 vector2, float x, float y) => new (vector2.X + x, vector2.Y + y);
         
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Size2 ToSize(this Vector2 value) => new Size2(value.X, value.Y);
+        public static Size2 ToSize(this Vector2 value) => new (value.X, value.Y);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Size2 ToAbsoluteSize(this Vector2 value)
@@ -73,10 +73,10 @@ namespace MonoGame.Extended
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector2 PerpendicularClockwise(this Vector2 value) => new Vector2(value.Y, -value.X);
+        public static Vector2 PerpendicularClockwise(this Vector2 value) => new(value.Y, -value.X);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector2 PerpendicularCounterClockwise(this Vector2 value) => new Vector2(-value.Y, value.X);
+        public static Vector2 PerpendicularCounterClockwise(this Vector2 value) => new(-value.Y, value.X);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Vector2 Truncate(this Vector2 value, float maxLength)
@@ -244,6 +244,24 @@ namespace MonoGame.Extended
             var dotNumerator = vector1.X*vector2.X + vector1.Y*vector2.Y;
             var lengthSquaredDenominator = vector2.X*vector2.X + vector2.Y*vector2.Y;
             return dotNumerator/lengthSquaredDenominator*vector2;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Point ToPoint(this Vector2 vector)
+        {
+            return new Point((int)vector.X, (int)vector.Y);
+        }
+
+        public static Vector2 Minimum(Vector2 first, Vector2 second)
+        {
+            return new Vector2(first.X < second.X ? first.X : second.X,
+                first.Y < second.Y ? first.Y : second.Y);
+        }
+
+        public static Vector2 Maximum(Vector2 first, Vector2 second)
+        {
+            return new Vector2(first.X > second.X ? first.X : second.X,
+                first.Y > second.Y ? first.Y : second.Y);
         }
     }
 }

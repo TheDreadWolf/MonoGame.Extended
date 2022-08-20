@@ -19,7 +19,7 @@ namespace MonoGame.Extended
         /// <summary>
         ///     Returns a <see cref="Size" /> with <see cref="Width" /> and <see cref="Height" /> equal to <c>0.0f</c>.
         /// </summary>
-        public static readonly Size Empty = new Size();
+        public static readonly Size Empty = new();
 
         /// <summary>
         ///     The horizontal component of this <see cref="Size" />.
@@ -98,8 +98,8 @@ namespace MonoGame.Extended
         /// </returns>
         public override bool Equals(object obj)
         {
-            if (obj is Size)
-                return Equals((Size) obj);
+            if (obj is Size size)
+                return Equals(size);
             return false;
         }
 

@@ -2,7 +2,15 @@
 
 namespace MonoGame.Extended
 {
-    public abstract class Camera<T> where T : struct
+    public interface ICamera
+    {
+        public  Matrix GetViewMatrix();
+        public Matrix GetInverseViewMatrix();
+        public BoundingFrustum GetBoundingFrustum();
+        public Matrix GetProjectionMatrix();
+    }
+
+    public abstract class Camera<T>:ICamera where T : struct
     {
         public abstract T Position { get; set; }
         public abstract float Rotation { get; set; }
@@ -24,6 +32,7 @@ namespace MonoGame.Extended
 
         public abstract Matrix GetViewMatrix();
         public abstract Matrix GetInverseViewMatrix();
+        public abstract Matrix GetProjectionMatrix();
 
         public abstract BoundingFrustum GetBoundingFrustum();
         public abstract ContainmentType Contains(Vector2 vector2);

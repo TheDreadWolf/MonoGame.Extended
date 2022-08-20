@@ -98,6 +98,12 @@ namespace MonoGame.Extended
             Rotation += deltaRadians;
         }
 
+        public void RotateDegrees(float degrees)
+        {
+            float radians = FloatHelper.Radians(degrees);
+            Rotate(radians);
+        }
+
         public override void ZoomIn(float deltaZoom)
         {
             ClampZoom(Zoom + deltaZoom);
@@ -174,6 +180,11 @@ namespace MonoGame.Extended
             return Matrix.Invert(GetViewMatrix());
         }
 
+        public override Matrix GetProjectionMatrix()
+        {
+            return Matrix.CreateOrthographicOffCenter(0, _viewportAdapter.ViewportWidth, _viewportAdapter.ViewportHeight, 0, -1, 0);
+        }
+
         private Matrix GetProjectionMatrix(Matrix viewMatrix)
         {
             var projection = Matrix.CreateOrthographicOffCenter(0, _viewportAdapter.VirtualWidth, _viewportAdapter.VirtualHeight, 0, -1, 0);
@@ -205,5 +216,7 @@ namespace MonoGame.Extended
             var boundingBox = new BoundingBox(min, max);
             return GetBoundingFrustum().Contains(boundingBox);
         }
+
+       
     }
 }
